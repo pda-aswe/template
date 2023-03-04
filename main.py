@@ -2,6 +2,7 @@
 
 import paho.mqtt.client as mqtt
 import time
+import os
 
 def on_connect(client,userdata,flags, rc):
     #hier alle Topics hinzufügen auf welche man höhren möchte
@@ -25,7 +26,13 @@ if __name__ == "__main__": # pragma: no cover
     #Wird aufgerufen für ein spezielles Topic
     client.message_callback_add("test/Pfad/2", specific_callback)
 
-    client.connect("localhost",1883,60)
+
+    docker_container = os.environ.get('DOCKER_CONTAINER', False)
+    if docker_container:
+        mqtt_address = "broker"
+    else:
+        mqtt_address = "localhost"
+    client.connect(mqtt_address,1883,60)
     client.loop_start()
 
     #In diesen Teil können andere Sachen gemacht werden
