@@ -30,3 +30,22 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov
+        
+    - name: Get commit hash ⚙️
+      id: sha
+      run: echo "::set-output name=sha::${GITHUB_SHA::7}"
+      
+    - name: Log in to the Container registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4.0.0
+      with:
+        context: .
+        push: true
+        tags: |
+          ghcr.io/${{ github.repository }}
+          ghcr.io/${{ github.repository }}:${{ steps.sha.outputs.sha }}
