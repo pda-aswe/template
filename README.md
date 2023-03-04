@@ -1,4 +1,4 @@
-# template
+# template 
 
 ## Allgemein
 MQTT-Client läuft im Hintergrund als ein Thread. Wenn eine neue Nachricht empfangen wird 
