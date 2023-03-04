@@ -2,7 +2,7 @@
 
 ## Allgemein
 MQTT-Client läuft im Hintergrund als ein Thread. Wenn eine neue Nachricht empfangen wird 
-Alle Pythonmodule die nicht Standardmäßig enthalten sind, müssen in die Datei requirements.txt geschrieben werden, damit automatisch ein lauffähiges Docker-Image erstellt werden kann. Alle Tests sollten in den tests Ordner eingefügt werden. Ein Docker-Image wird nur erstellt, wenn kein pytest fehlgeschlagen ist.
+Alle Pythonmodule die nicht Standardmäßig enthalten sind, müssen in die Datei requirements.txt geschrieben werden, damit automatisch ein lauffähiges Docker-Image erstellt werden kann. Alle Tests sollten in den tests Ordner eingefügt werden. Ein Docker-Image wird nur erstellt, wenn kein pytest fehlgeschlagen ist. 
 
 Request Response Erklären
 Code erklären
