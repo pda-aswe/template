@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -31,7 +31,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov
-        
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
     - name: Get commit hash ⚙️
       id: sha
       run: echo "::set-output name=sha::${GITHUB_SHA::7}"
