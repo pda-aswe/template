@@ -32,7 +32,6 @@ if __name__ == "__main__": # pragma: no cover
         mqtt_address = "broker"
     else:
         mqtt_address = "localhost"
-    print(mqtt_address)
     client.connect(mqtt_address,1883,60)
     client.loop_start()
 
