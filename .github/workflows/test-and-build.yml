@@ -32,6 +32,7 @@ jobs:
       run: |
         pytest --cov
   build:
+    needs: [test]
     runs-on: ubuntu-latest
 
     steps:
