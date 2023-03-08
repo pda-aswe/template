@@ -1,8 +1,4 @@
-def test_always_passes():
-    assert True
+from src import main
 
-def test_uppercase():
-    assert "asdf".upper() == "ASDF"
-
-#def test_always_fails():
-#    assert False
+def test_testCase():
+    assert main.function2Test()

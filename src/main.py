@@ -16,6 +16,9 @@ def on_message(client, userdata, msg):
 def specific_callback(client, userdata, msg):
     print("Specific Topic: "+msg.topic+" "+str(msg.payload))
 
+def function2Test():
+    return True
+
 if __name__ == "__main__": # pragma: no cover
     #aufbau der MQTT-Verbindung
     client = mqtt.Client()

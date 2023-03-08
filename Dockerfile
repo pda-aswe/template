@@ -10,4 +10,4 @@ ENV DOCKER_CONTAINER Yes
 
 COPY . .
 
-CMD [ "python3", "-u", "main.py"]
+CMD [ "python3", "-u", "src/main.py"]

@@ -9,6 +9,6 @@ Dieses Repo soll nur als Template dienen für alle weiteren Services und Use-Cas
 - Für die Tests gibt es den Ordner tests. Zum Testen des Pythoncode wird pytest verwendet, da es einfach in Github Action zu integrieren ist.
 - Tests können lokal mit `pytest` ausgeführt werden. Das muss mit `pip3 install pytest` nachinstalliert werden.
 - Damit die Tests gefunden werden, muss die Datei und der Funktionsname mit `test_` beginnen.
-- Mit `pytest --cov=.` wird die Codecoverage ausgewertet. Das muss mit `pip3 install pytest-cov` nachinstalliert werden.
-- Im Dockercontainer wird immer die Datei main.py ausgeführt
+- Mit `pytest --func_cov=src tests/ -v` laufen alle Tests durch. Das muss mit `pip3 install pytest-func-cov` nachinstalliert werden.
+- Im Dockercontainer wird immer die Datei src/main.py ausgeführt
 - So kann Request/Response mit MQTT integriert werden: [Understanding And Using MQTT v5 Request Response](http://www.steves-internet-guide.com/mqttv5-request-response/)
